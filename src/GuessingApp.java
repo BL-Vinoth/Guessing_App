@@ -45,9 +45,9 @@ public class GuessingApp {
 //            after the game loop completes
                 StorageService.saveResult(player, attempts, win);
 
-                restart = GameController.restartGame(sc);
+               
             }
-
+         restart = GameController.restartGame(sc);
 
         } while (restart);
     }
