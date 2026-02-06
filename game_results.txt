@@ -5,3 +5,4 @@ Player :vinoth, Attempts :4, Result :Lose
 Player :vinoth, Attempts :5, Result :Lose
 Player :vinoth, Attempts :6, Result :Lose
 Player :vinoth, Attempts :7, Result :Lose
+Player :vinoth, Attempts :1, Result :Lose
