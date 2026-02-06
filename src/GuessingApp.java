@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class GuessingApp {
     static void main(String[] args) throws InvalidInputException {
         Scanner sc = new Scanner(System.in);
-        boolean restart = false;
+        boolean restart;
         System.out.println("++++++++++++++++++++++++");
         System.out.println("Welcome to Guessing App");
         System.out.println("+++++++++++++++++++++++++\n");
@@ -45,9 +45,9 @@ public class GuessingApp {
 //            after the game loop completes
                 StorageService.saveResult(player, attempts, win);
 
-                restart = GameController.restartGame(sc);
-            }
 
+            }
+            restart = GameController.restartGame(sc);
 
         } while (restart);
     }
