@@ -1,10 +1,28 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Guessing_App {
     public static void main(String[] args){
         System.out.println("Welcome to the Guessing App");
         GameConfig gameConfig = new GameConfig();
         gameConfig.showRules();
+
+        Scanner sc = new Scanner(System.in);
+        int attempts = 0;
+
+        while (attempts < gameConfig.getMax_Attempts()){
+            System.out.print("Enter Your guess :");
+            int guess = sc.nextInt();
+            attempts++ ;
+
+
+            String result = GuessValidator.validateGuess(guess, gameConfig.getTargetNumber());
+            System.out.println(result);
+            
+            if("Correct".equals(result)){
+                break;
+            }
+        }
 
     }
 }
@@ -33,5 +51,16 @@ class GameConfig{
         System.out.println("Guess a Number between " + Min + " and " +Max);
         System.out.println("You have " + Max_Attempts + " Attempts ");
         System.out.println("Hints will be provided after wrong guesses \n");
+    }
+}
+
+class GuessValidator {
+    public static String validateGuess (int guess, int target){
+        if(guess == target){
+            return "Correct";
+        }else if (guess < target){
+            return "Low";
+        }
+        return "High";
     }
 }
