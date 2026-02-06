@@ -4,14 +4,22 @@ import java.util.Scanner;
 
 public class GuessingApp {
     public static void main(String[] args) throws InvalidInputException{
-        System.out.println("Welcome to the Guessing App");
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("++++++++++++++++++++++++");
+        System.out.println("Welcome to Guessing App");
+        System.out.println("+++++++++++++++++++++++++\n");
+        System.out.print("Enter Player Name :");
+        String player = sc.nextLine();
+
         GameConfig gameConfig = new GameConfig();
         gameConfig.showRules();
 
-        Scanner sc = new Scanner(System.in);
         int attempts = 0;
         int minHint = 0;
 
+        boolean win = false ;
+// Exhausts the maximum attempts
         while (attempts < gameConfig.getMax_Attempts()){
             System.out.print("Enter Your guess :");
 //            user input validation before
@@ -29,6 +37,8 @@ public class GuessingApp {
                 break;
             }
 
+//            after the game loop completes
+            StorageService.saveResult(player, attempts, win);
 
         }
 
