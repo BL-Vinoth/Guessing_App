@@ -1,8 +1,9 @@
+import javax.xml.validation.Validator;
 import java.util.Random;
 import java.util.Scanner;
 
 public class GuessingApp {
-    public static void main(String[] args){
+    public static void main(String[] args) throws InvalidInputException{
         System.out.println("Welcome to the Guessing App");
         GameConfig gameConfig = new GameConfig();
         gameConfig.showRules();
@@ -13,7 +14,8 @@ public class GuessingApp {
 
         while (attempts < gameConfig.getMax_Attempts()){
             System.out.print("Enter Your guess :");
-            int guess = sc.nextInt();
+//            user input validation before
+            int guess = ValidationService.validateInput(sc.nextLine());
             attempts++ ;
             minHint++ ;
 
