@@ -26,17 +26,11 @@ Platform: Console application
 
 HOW TO RUN THE PROGRAM
 
-Clone or download the repository:
-git clone https://github.com/your-username/guessing-game-java.git
-
-Navigate to the project directory:
-cd guessing-game-java
-
 Compile the program:
-javac GuessingGame.java
+javac GuessingApp.java
 
 Run the program:
-java GuessingGame
+java GuessingApp
 
 HOW TO PLAY
 
